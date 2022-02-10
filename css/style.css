@@ -1,0 +1,94 @@
+
+/* 공통 */
+#wrap{display: flex; justify-content: center; align-items: center; width:100vw; min-height:100vh; background: #fff;}
+
+/* layout */
+#template_wrap{}
+
+
+/* container*/
+.container{width: 1180px; min-height:600px; background:#8faadc; padding:15px; box-sizing: border-box;}
+
+/* template */
+.template_wrap{position: relative; padding-bottom: 50px;}
+.template_wrap .tmp_head{padding: 0 15px;margin-bottom: 15px;} 
+.template_wrap .tmp_head .page_title{float:left; font-size: 30px;  font-weight: bold; line-height: 44px;}
+.template_wrap .tmp_head .time_box{float:right; padding-left: 50px;  background: url(../images/m_time.png) no-repeat 0 50%;}
+.template_wrap .tmp_head .time_box > span{display: block; float:left; font-size: 24px; font-weight: bold; line-height: 44px;}
+.template_wrap .tmp_head .time_box > span.minute{}
+.template_wrap .tmp_head .time_box > span.dot{}
+.template_wrap .tmp_head .time_box > span.second{}
+
+.template_wrap .tmp_content{display: flex; }
+.template_wrap .tmp_content .tmp_item{width:calc(50% - 2.5px); height: calc(100vh - 427px); background: #fff; box-sizing: border-box; padding: 10px;}
+.template_wrap .tmp_content .tmp_item:first-of-type{margin-right: 5px;}
+.template_wrap .tmp_content .tmp_item.context{}
+.template_wrap .tmp_content .tmp_item.question{}
+.template_wrap .tmp_content .tmp_item .tmp_inner{height:calc(100vh - 447px); overflow-y: auto; overflow-x: hidden;;}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner{} 
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_txt{padding-bottom: 70px; padding-top: 20px;} 
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_txt p{font-size: 16px; color:#000;} 
+/* .template_wrap .tmp_content .tmp_item.context .tmp_inner .context_txt p:before{display: block; content:''; position: absolute;top:calc(50% - 2.5px); left:0; width: 5px; height: 5px; border-radius: 50%; background:#516485;} */
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap{border:5px solid #bfbfbf; display: flex; width: 100%; box-sizing: border-box;} 
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box{width: 100%; padding: 20px; box-sizing: border-box;} 
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_title{display: block; position: relative; font-size: 20px; padding-left: 10px; color:#516485; margin-bottom: 40px;} 
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_title::before{display: block; content:''; position: absolute;top:calc(50% - 2.5px); left:0; width: 5px; height: 5px; border-radius: 50%; background:#516485;}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A{} 
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li{position: relative; font-size: 16px; padding-left: 20px; margin-bottom: 20px; line-height: 24px;}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li:before{display: block; content:'1.'; position: absolute; top:0; left:0; font-size: 20px;}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li:nth-of-type(1):before{content:'1.';}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li:nth-of-type(2):before{content:'2.';}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li:nth-of-type(3):before{content:'3.';}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li:nth-of-type(4):before{content:'4.';}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li:nth-of-type(5):before{content:'5.';}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_box .context_num_A li:last-of-type{margin-bottom: 0;}
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_img{} 
+.template_wrap .tmp_content .tmp_item.context .tmp_inner .context_wrap .context_img img{width: 100%;}
+
+.template_wrap .tmp_content .tmp_item.question .tmp_inner{}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_top_box{padding: 20px 0 70px;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_top_box .question_title{display: block; font-size: 16px; font-weight: bold;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_box{}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_box .list{position: relative; margin-bottom: 10px;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_box .list .list_num{display: block; position: absolute; top:calc(50% 
+    - 15px); left:10px; width: 30px; height: 30px; border-radius: 50%; background:#000; color:#fff; text-align: center; line-height: 30px; font-size: 16px;  transition: all .1s;} 
+    .template_wrap .tmp_content .tmp_item.question .tmp_inner .question_box .list:hover .list_num{color:#8faadc;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_box .list:nth-last-child(){margin-bottom: 0;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_box .list a{display: block; font-size: 16px; background:#f2f2f2; padding:20px 40px 20px 55px; transition: all .1s; border-radius:10px; border:1px solid #ccc; box-sizing: border-box;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .question_box .list:hover a{color:#fff; background:#8faadc;}
+
+
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap{}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box{}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_q{display: flex;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_q .drag_img{width: 150px; height: 120px; display: flex;  justify-content: center; align-items: center; padding: 0 10px; box-sizing: border-box; z-index: 1;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_q .drag_img img{max-width: 100%;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_a{display: flex; padding-top: 30px;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_a .drag_img{position: relative; width: 110px; height: 110px; box-sizing: border-box; background:#f2f2f2; border:2px solid #d9d9d9; border-radius:5px; margin-left: 35px;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_a .drag_img:before{display: block; content:''; position: absolute; top:calc(50% - 50px); right:-30px; width:20px; height:100px;background:url(../images/arrwo_right.jpg) no-repeat 0 50%; background-size:100% auto;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_a .drag_img:first-of-type{margin-left: 0;}
+.template_wrap .tmp_content .tmp_item.question .tmp_inner .drag_wrap .drag_box ul.drag_a .drag_img:last-of-type:before{width: 0;}
+
+
+
+
+.template_wrap .tmp_footer{position: absolute; bottom:0;left:0; width:100%; background:#4472c4; height:50px;}
+.template_wrap .tmp_footer .btn_change{display: block; width: 50px; height: 49px; }
+.template_wrap .tmp_footer .btn_change.prev{float: left;  background:url(../images/btn_prev.png) no-repeat 50% 50%; background-size:30px auto;}
+.template_wrap .tmp_footer .btn_change.next{float: right; background:url(../images/btn_next.png) no-repeat 50% 50%; background-size:30px auto;}
+.template_wrap .tmp_footer .tmp_paging{width:calc(100% - 140px); padding: 5px 10px; text-align: center; display: flex; justify-content: space-evenly; float: left;} 
+.template_wrap .tmp_footer .tmp_paging .btn_page{}
+.template_wrap .tmp_footer .tmp_paging .btn_page a{display: block; width: 40px; height: 40px; background: #fff; border-radius:50%; text-align: center; line-height: 40px; box-sizing: border-box; font-size: 20px;}
+.template_wrap .tmp_footer .tmp_paging .btn_page.current a{background:#ffd966;}
+.template_wrap .tmp_footer .tmp_paging .btn_page.end a{background:#c5e0b4;}
+
+
+
+
+
+
+
+
+
+
+
