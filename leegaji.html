@@ -12,34 +12,62 @@
     
     <style>
         body{padding:0 30px;}
+        .line_bottom {text-decoration: line-through;}
     </style>
     
 </head>
 <body>
     <h1>이가지를 위한 영상</h1>
     
+    <h2>놀면뭐하니?</h2>
     <br>
+    <table class="table">
+  <tbody>
+    <tr onclick="linkFnc('http://naver.me/G2H1tyj3')">
+        <td>놀면뭐하니 - 132화(220409)</td>
+    </tr>
+     <tr onclick="linkFnc('http://naver.me/xXPZTtjK')">
+        <td>놀면뭐하니 - 133화(220416)</td>
+    </tr>
+      <tr onclick="linkFnc('http://naver.me/xMbX3cHc')">
+        <td>놀면뭐하니 - 133화(220423)</td>
+    </tr>
+  </tbody>
+</table>
+    
+    <br>
+    <br>
+     
+    <h2>서울체크인</h2>
     <br>
     <table class="table">
   <thead>
-    <tr>
+    <tr class="line_bottom">
       <th scope="col">서울 체크인</th>
     </tr>
   </thead>
   <tbody>
-    <tr onclick="location.href='http://naver.me/IgYgQKsT'">
+    <tr class="line_bottom" onclick="leeFnc()">
         <td>서울체크인 - 1화(220408)</td>
     </tr>
-     <tr onclick="location.href='http://naver.me/5f4Whr0m'">
+     <tr class="line_bottom" onclick="leeFnc()">
         <td>서울체크인 - 2화(220415)</td>
     </tr>
-      <tr onclick="location.href='http://naver.me/5vMeSvfR'">
+      <tr class="line_bottom" onclick="leeFnc()">
         <td>서울체크인 - 3화(220422)</td>
     </tr>
   </tbody>
 </table>
     
-
+    <script>
+    function leeFnc(){
+        alert("이가지 이미 본거잖아아아아아앙 가만안도웅~~~");
+    }
+        
+    function linkFnc(link) {
+        window.location.href = link;
+    }
+    </script>
     
 </body>
 </html>
