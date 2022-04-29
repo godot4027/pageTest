@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+		
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>돌봄마켓</title>
+<link href="https://sucareshop.com/resources/sucareshop/css/style.css?v=1" rel="stylesheet" type="text/css">
+<link href="http://localhost/resources/sucareshop/css/sweetalert2.css" rel="stylesheet" type="text/css">
+<script src="./resources/sucareshop/js/lib/jquery-2.1.4.min.js"></script>
+<script src="./resources/sucareshop/js/lib/angular.min.js"></script>
+<script src="./resources/sucareshop/js/lib/sweetalert2.js"></script>
+<script src="./resources/sucareshop/js/lib/namespace.js"></script>
+<script src="./resources/sucareshop/js/lib/common.js"></script>
+<!-- <script src="./resources/sucareshop/js/sucareshop.js?v=1"></script> -->
+<!-- configuration -->
+<script src="./resources/sucareshop/js/app.js"></script>
+<!-- directives -->
+<!-- <script src="./resources/sucareshop/js/directive.js?v=1"></script> -->
+<!-- design -->
+<!-- <script src="./resources/sucareshop/js/design.js?v=1"></script> -->
+<!-- controllers -->
+<!-- <script src="./resources/sucareshop/js/commonController.js?v=1"></script> -->
+		<!-- <script src="./resources/sucareshop/js/chattingController.js?v=1"></script> -->
+		<!-- <script src="./resources/sucareshop/js/design.js"></script> -->
+	</head>
+
+	<body ng-app="app" ng-controller="chattingController">
+		<input type="hidden" value="10" id="mbSeq">
+		<input type="hidden" value="104" id="channelid">
+		<input type="hidden" value="" id="rvSeq">
+		<input type="hidden" value="9" id="posStatus">
+		<input type="hidden" value="1" id="sctType">
+		<input type="hidden" value="0" id="authorYn">
+		<div class="wrap">
+	
+			<!-- 상단 -->
+			<div class="chat__inner">
+				<div class="header__title header__titleList">
+					<div class="header__title--now">
+						<a ng-click="back()" class="btnBack" title="이전"></a>
+						<span></span>
+						<span class="headerState">ff</span>
+					</div>
+				</div>
+				<div class="chatApply__inner" ng-if="chatApply">
+					<a ng-click="apply()" class="btnApply">
+						<em></em>
+						<span>신청하기</span>
+					</a>
+				</div>
+			</div>
+			
+	
+			<!-- 메인 -->
+			<div class="chattingList__inner chatHgtInner" id="inner" ng-class="getClass()" ">
+				<!-- 
+					- chatOpiton div(하단에 사진, 카메라 버튼)가 나오면 .chatHgt01 추가
+					- chatOpiton div가 없으면 class .chatHgt01 삭제
+					- header에 chatApply__inner div 없고 chatOpiton div만 있으면 class .chatHgt01 삭제
+					- chatOpiton div 없고 header에 chatApply__inner div만 있으면 class .chatHgt01 삭제
+					- header에 chatApply__inner div, chatOpiton div(하단에 사진, 카메라 버튼) 없으면 (둘다 없으면)
+					.chatHgt02 추가 ( <div class="chattingList__inner chatHgt02"> )
+				-->
+				<div class="chattingList">
+					<div class="chatWrap"><div mg-seq="932" class="chatInner chatPosition__left"><div class="chatImg"><img src="/resources/sucareshop/img/defaultImg.png" alt="" onerror="this.src=&quot;/resources/sucareshop/img/defaultImg.png&quot;"></div><div class="chatBox chatYearDate"><div class="chatName"><span>김테스트</span></div><div class="chatCont">Ddhdhhc</div></div><div class="chatState"><span>17:06</span></div></div><div mg-seq="933" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">lijljjlk</div></div><div class="chatState"><span>17:06</span></div></div><div mg-seq="936" class="chatInner chatPosition__left"><div class="chatImg"><img src="/resources/sucareshop/img/defaultImg.png" alt="" onerror="this.src=&quot;/resources/sucareshop/img/defaultImg.png&quot;"></div><div class="chatBox chatYearDate"><div class="chatName"><span>김테스트</span></div><div class="chatCont">Cjdkjd</div></div><div class="chatState"><span>17:06</span></div></div><div mg-seq="937" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">wqfqwfqfw</div></div><div class="chatState"><span>17:06</span></div></div><div mg-seq="939" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">fewfewf</div></div><div class="chatState"><span>17:06</span></div></div><div mg-seq="941" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">123123123</div></div><div class="chatState"><span>17:07</span></div></div><div mg-seq="951" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">3333</div></div><div class="chatState"><span>17:20</span></div></div><div mg-seq="953" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">11111</div></div><div class="chatState"><span>17:20</span></div></div><div mg-seq="955" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">323213213</div></div><div class="chatState"><span>17:21</span></div></div><div mg-seq="957" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">5252525</div></div><div class="chatState"><span>17:21</span></div></div><div mg-seq="979" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">123445</div></div><div class="chatState"><span>22:43</span></div></div><div mg-seq="981" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">hh</div></div><div class="chatState"><span>22:43</span></div></div><div mg-seq="983" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">dfewfwefg</div></div><div class="chatState"><span>22:44</span></div></div><div mg-seq="985" class="chatInner chatPosition__right"><div class="chatBox chatYearDate"><div class="chatCont">123213</div></div><div class="chatState"><span>2022/03/21 22:44</span></div></div><div mg-seq="1445" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅁㅁ</div></div><div class="chatState"><span>10:53</span></div></div><div mg-seq="1447" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㄴㄴㄴㄴ</div></div><div class="chatState"><span>10:53</span></div></div><div mg-seq="1449" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅂㅈㄷㅈㅂㄷ</div></div><div class="chatState"><span>10:53</span></div></div><div mg-seq="1451" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅂㅂㅂㅂ</div></div><div class="chatState"><span>10:54</span></div></div><div mg-seq="1453" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅁㅁ</div></div><div class="chatState"><span>10:55</span></div></div><div mg-seq="1455" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">111</div></div><div class="chatState"><span>10:55</span></div></div><div mg-seq="1457" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>10:55</span></div></div><div mg-seq="1459" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>10:55</span></div></div><div mg-seq="1461" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅂㅂ</div></div><div class="chatState"><span>10:55</span></div></div><div mg-seq="1463" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>10:56</span></div></div><div mg-seq="1465" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅁㄴㅇ</div></div><div class="chatState"><span>11:02</span></div></div><div mg-seq="1467" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>11:02</span></div></div><div mg-seq="1469" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>11:03</span></div></div><div mg-seq="1471" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>11:04</span></div></div><div mg-seq="1473" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅂㅂ</div></div><div class="chatState"><span>11:04</span></div></div><div mg-seq="1475" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅂㅂㅁㅁ</div></div><div class="chatState"><span>11:04</span></div></div><div mg-seq="1477" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>11:05</span></div></div><div mg-seq="1479" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>11:05</span></div></div><div mg-seq="1481" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>11:05</span></div></div><div mg-seq="1483" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅂ</div></div><div class="chatState"><span>11:05</span></div></div><div mg-seq="1485" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">12345</div></div><div class="chatState"><span>11:06</span></div></div><div mg-seq="1487" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅂㅂㅂ</div></div><div class="chatState"><span>11:06</span></div></div><div mg-seq="1489" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅅㄷㄴㅅ</div></div><div class="chatState"><span>11:07</span></div></div><div mg-seq="1491" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">1234</div></div><div class="chatState"><span>11:08</span></div></div><div mg-seq="1493" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">11</div></div><div class="chatState"><span>11:08</span></div></div><div mg-seq="1495" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>11:09</span></div></div><div mg-seq="1497" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">111</div></div><div class="chatState"><span>11:09</span></div></div><div mg-seq="1499" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">222</div></div><div class="chatState"><span>11:09</span></div></div><div mg-seq="1501" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">333</div></div><div class="chatState"><span>11:09</span></div></div><div mg-seq="1503" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">12345</div></div><div class="chatState"><span>11:09</span></div></div><div mg-seq="1505" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">입력테스트123</div></div><div class="chatState"><span>11:09</span></div></div><div mg-seq="1507" class="chatInner chatPosition__right"><div class="chatBox chatYearDate"><div class="chatCont">지연시간있나?</div></div><div class="chatState"><span>2022/04/25 11:10</span></div></div><div mg-seq="1653" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅇㅇ</div></div><div class="chatState"><span>16:15</span></div></div><div mg-seq="1655" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㅎㅇ</div></div><div class="chatState"><span>16:15</span></div></div>
+	
+					<div mg-seq="1657" class="chatInner chatPosition__right"><div class="chatBox chatYearDate"><div class="chatCont">ㄱ</div></div><div class="chatState"><span>2022/04/28 16:15</span></div></div><div mg-seq="1659" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">😄😉😉☺😝</div></div><div class="chatState"><span>16:15</span></div></div><div mg-seq="1661" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">🤬😈👺👺👹🤡👺👻👽👽👾</div></div><div class="chatState"><span>16:15</span></div></div><div mg-seq="1663" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">채팅 테스트123</div></div><div class="chatState"><span>16:53</span></div></div><div mg-seq="1665" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatContImg"><img src="/upload/2022/04/28/1651133404020_thumb.jpg" onclick="showModal(event)" org-src="/upload/2022/04/28/1651133404020.jpeg"><div class="modal"><span class="modalClose" onclick="hideModal(event)">×</span><img class="modal-content"><div class="btnModal"><a title="저장" href="/file/download?path=%2Fupload%2F2022%2F04%2F28%2F1651133404020.jpeg"></a></div></div></div></div><div class="chatState"><span>17:10</span></div></div><div mg-seq="1667" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatContImg"><img src="/upload/2022/04/28/1651136804305_thumb.jpg" onclick="showModal(event)" org-src="/upload/2022/04/28/1651136804305.jpeg"><div class="modal"><span class="modalClose" onclick="hideModal(event)">×</span><img class="modal-content"><div class="btnModal"><a title="저장" href="/file/download?path=%2Fupload%2F2022%2F04%2F28%2F1651136804305.jpeg"></a></div></div></div></div><div class="chatState"><span>18:06</span></div></div><div mg-seq="1669" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatContImg"><img src="/upload/2022/04/28/1651136807663_thumb.jpg" onclick="showModal(event)" org-src="/upload/2022/04/28/1651136807663.png"><div class="modal"><span class="modalClose" onclick="hideModal(event)">×</span><img class="modal-content"><div class="btnModal"><a title="저장" href="/file/download?path=%2Fupload%2F2022%2F04%2F28%2F1651136807663.png"></a></div></div></div></div><div class="chatState"><span>18:06</span></div></div><div mg-seq="1673" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">채팅 테스트 입니다</div></div><div class="chatState"><span>18:08</span></div></div><div mg-seq="1681" class="chatInner chatPosition__right"><div class="chatBox chatYearDate"><div class="chatCont">shshsh</div></div><div class="chatState"><span>2022/04/29 09:29</span></div></div><div mg-seq="1683" class="chatInner chatPosition__right"><div class="chatBox"><div class="chatCont">ㄷㄱㄷㄱㄷㄱㄷ</div></div><div class="chatState"><span>09:32</span></div></div></div>
+				</div>
+
+			<div class="chatTyping">
+				<div class="chatBottom">
+					<div class="addOption">
+						<a ng-class="chatOption ? 'chatPlusOn' : 'chatPlusOff';" ng-click="showOption()"></a>
+						<!-- chatOption 클릭시 chatPlusOn, 클릭하기 전 chatPlusOff -->
+						<!-- <a href="" class="chatPlusOff"></a> -->
+					</div>
+					<div class="typingHere">
+						<textarea style="height: 38px;" id="text" ng-disabled="$scope.sending" ng-model="message" ng-blur="collapse($event)" ng-focus="expand($event)" ng-keydown="changeHeight($event)"></textarea>
+					</div>
+					<div class="addOption">
+						<a ng-click="sendMessage()" class="chatSend"></a>
+					</div>
+				</div>
+	
+				<div class="chatOpiton" ng-if="chatOption">
+					<ul>
+						<li ng-click="openGallery()">
+							<em title="사진" class="chatPhoto"></em>
+							<em>사진</em>
+						</li>
+					</ul>
+				</div>
+				<input type="file" id="gallery" style="display: none;" accept="image/*" onchange="angular.element(this).scope().fileChanged()">
+			</div>
+	
+		</div>
+
+		<script>
+			function showModal(event) {
+				let $target = $(event.target);
+				let $modal = $target.next();
+				$modal.children('img').attr('src', $target.attr('org-src'));
+				$modal.css('display', 'flex');
+			}
+
+			function hideModal(event) {
+				$(event.target).parent().hide();
+			}
+			
+			const scrollToTopFn = () => { 
+				if (window.Keyboard && !window.Keyboard.isVisible) { 
+					window.scrollTo(0,0); window.document.body.scrollTop = 0; 
+					}
+				};
+				window.addEventListener('keyboardDidHide', () => { 
+					window.setTimeout(scrollToTopFn, 100); 
+					}
+				);
+
+		</script>
+	</body>
+
+</html> 
