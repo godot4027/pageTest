@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이가지</title>
+    <title>현플릭스</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     
     <style>
         body{padding:0 30px;}
-        .line_bottom {text-decoration: line-through;}
+        .line_bottom {text-decoration: line-through; color:rgba(0,0,0,0.2);}
+        
     </style>
     
 </head>
 <body>
-    <h1>이가지를 위한 영상</h1>
-    
-     <br>
     <br>
+    <h1>현플릭스</h1>
+    
+    <br>
+    <br>
+
+    <div class="inner">
+
+
+    </div>
+<!-- 
      
     <h2>전지적 참견 시점</h2>
     <br>
@@ -30,7 +38,7 @@
       <th scope="col">전참시</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="table01">
      <tr onclick="linkFnc('http://naver.me/xlKXTCrj')">
         <td>전참시 - 201화(220528)</td>
     </tr>
@@ -40,92 +48,102 @@
 
   </tbody>
 </table>
-    
-    <br>
-    <h2>놀면뭐하니?</h2>
-    <br>
-    <table class="table">
-  <tbody>
-    <tr class="line_bottom" onclick="leeFnc()">
-        <td>놀면뭐하니 - 132화(220409)</td>
-    </tr>
-      <tr class="line_bottom" onclick="leeFnc()">
-        <td>놀면뭐하니 - 133화(220416)</td>
-    </tr>
-       <tr class="line_bottom" onclick="leeFnc()">
-        <td>놀면뭐하니 - 134화(220423)</td>
-    </tr>
-  </tbody>
-</table>
-    
-    <br>
-    <br>
+     -->
      
-    <h2>서울체크인</h2>
-    <br>
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">서울 체크인</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="line_bottom" onclick="leeFnc()">
-        <td>서울체크인 - 1화(220408)</td>
-    </tr>
-     <tr class="line_bottom" onclick="leeFnc()">
-        <td>서울체크인 - 2화(220415)</td>
-    </tr>
-      <tr class="line_bottom" onclick="leeFnc()">
-        <td>서울체크인 - 3화(220422)</td>
-    </tr>
-    <tr class="line_bottom" onclick="leeFnc()">
-        <td>서울체크인 - 4화(220429)</td>
-    </tr>
-     <tr onclick="linkFnc('http://naver.me/5cDMjVBU')">
-        <td>서울체크인 - 5화(220506)</td>
-    </tr>
-     <tr onclick="linkFnc('http://naver.me/FbuUxtLh')">
-        <td>서울체크인 - 6화(220513)</td>
-    </tr>  
-    
-      
-  </tbody>
-</table>
-    
-     <br>
-    <br>
-     
-    <h2>골 때리는 그녀들</h2>
-    <br>
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">골때녀</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr onclick="linkFnc('http://naver.me/5g3lmrSL')">
-        <td>골때녀 - 44화(220525)</td>
-    </tr>
-    <tr class="line_bottom" onclick="leeFnc()">
-        <td>골때녀 - 42화(220511)</td>
-    </tr>
-     <tr class="line_bottom" onclick="leeFnc()">
-        <td>골때녀 - 41화(220504)</td>
-    </tr>
-    
-    
-  </tbody>
-</table>
     
     <script>
+
+    // 프로그램 목록
+    let program = {};
+    
+    let 전참시 = [
+        {name: "전참시 - 201화(220528)", url: "http://naver.me/xlKXTCrj"},
+        {name: "전참시 - 200화(220521)", url: ""},
+
+    ];
+
+    let 놀면뭐하니 = [
+        {name: "놀면뭐하니 - 132화(220409)", url:""},
+        {name: "놀면뭐하니 - 133화(220416)", url:""},
+        {name: "놀면뭐하니 - 134화(220423)", url:""},
+    ];
+
+    let 서울체크인 = [
+        {name: "서울체크인 - 6화(220513)", url: "http://naver.me/FbuUxtLh"},
+        {name: "서울체크인 - 5화(220506)", url: "http://naver.me/5cDMjVBU"},
+        {name: "서울체크인 - 4화(220429)", url: ""},
+        {name: "서울체크인 - 3화(220422)", url: ""},
+        {name: "서울체크인 - 2화(220415)", url: ""},
+        {name: "서울체크인 - 1화(220408)", url: ""},
+    ];
+
+    let 골때녀 = [
+        {name: "골때녀 - 44화(220525)", url: "http://naver.me/5g3lmrSL"},
+        {name: "골때녀 - 42화(220511)", url: ""},
+        {name: "골때녀 - 41화(220504)", url: ""},
+    ];
+
+    /* 신규 프로그램일시 추가 */
+
+    program.전참시 =  전참시;
+    program.놀면뭐하니 =  놀면뭐하니;
+    program.서울체크인 =  서울체크인;
+    program.골때녀 =  골때녀;
+
+    
+    let html = "";
+    // 화면에 배치
+    for (let key in program) {
+        
+        let inner = program[key];
+
+        // html += "<h2>" + key + "</h2>";
+        // html += "<br/>";
+        html += "<table class='table'>";
+        html += "<thead>";    
+        html += "   <tr>";
+        html += "       <th scope='col'>" + key + "</th>";
+        html += "   </tr>";   
+        html += "</thead>";     
+        html += "<tbody>";
+        
+        for (let value of program[key]) {
+            let inHtml = isLink(value);
+            html += inHtml;
+        }
+
+        html += "</tbody>";
+        html += "</table>";
+        html += "<br>";
+        html += "<br>";
+
+    }
+
+    $(".inner").append(html);
+
+
     function leeFnc(){
         alert("이가지 이미 본거잖아아아아아앙 가만안도웅~~~");
     }
         
     function linkFnc(link) {
         window.location.href = link;
+    }
+
+    function isLink(obj){
+
+        let html = "";
+        if (obj.url === "") {
+            html += "<tr class='line_bottom' onclick='leeFnc()'>";
+        } else {
+            html += "<tr onclick='linkFnc(\"" + obj.url + "\")'>";
+        }
+        html += '           <td>';
+        html += obj.name;
+        html += '           </td>';
+        html += '       </tr>';
+
+        return html;
     }
     </script>
     
